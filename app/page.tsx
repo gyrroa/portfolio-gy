@@ -50,7 +50,7 @@ export default function Portfolio() {
       <main>
         <Hero />
         <About />
-        <Experience />
+        {/* <Experience /> */}
         <Certifications />
         <TechStack />
         <Contact />

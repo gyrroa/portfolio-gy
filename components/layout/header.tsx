@@ -60,7 +60,7 @@ export default function Header() {
         >
           {[
             { id: "about", label: "About" },
-            { id: "experience", label: "Experience" },
+            // { id: "experience", label: "Experience" },
             { id: "certifications", label: "Certifications" },
             { id: "tech-stack", label: "Tech Stack" },
             { id: "contact", label: "Contact" },
