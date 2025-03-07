@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Send, Mail, Linkedin, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import SectionHeader from "@/components/ui/section-header"
+import { motion } from "framer-motion";
+import { Send, Mail, Linkedin, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SectionHeader from "@/components/ui/section-header";
 
 export default function Contact() {
   return (
@@ -19,25 +19,34 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-white">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-white">
+              Contact Information
+            </h3>
             <p className="text-gray-300">
-              Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+              Feel free to reach out if you're looking for a developer, have a
+              question, or just want to connect.
             </p>
 
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail className="h-5 w-5 text-primary" />
-                <span>john.doe@example.com</span>
+                <span>gyrroacquiat007@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Linkedin className="h-5 w-5 text-primary" />
-                <a href="https://linkedin.com/in/johndoe" className="hover:text-primary transition-colors">
-                  linkedin.com/in/johndoe
+                <a
+                  href="https://linkedin.com/in/johndoe"
+                  className="hover:text-primary transition-colors"
+                >
+                  https://www.linkedin.com/in/ken-gyrro-acquiat-b94096140/
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Github className="h-5 w-5 text-primary" />
-                <a href="https://github.com/johndoe" className="hover:text-primary transition-colors">
+                <a
+                  href="https://github.com/johndoe"
+                  className="hover:text-primary transition-colors"
+                >
                   github.com/johndoe
                 </a>
               </div>
@@ -103,6 +112,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
