@@ -11,7 +11,7 @@ export default function Experience() {
         <SectionHeader icon={<Briefcase />} title="Experience" />
 
         <div className="mt-12 space-y-8">
-          <TimelineItem
+          {/* <TimelineItem
             title="Senior Frontend Developer"
             company="Tech Innovations Inc."
             period="2021 - Present"
@@ -30,7 +30,7 @@ export default function Experience() {
             company="WebCraft Agency"
             period="2016 - 2018"
             description="Created responsive websites for clients across various industries. Worked with WordPress, HTML, CSS, and JavaScript to deliver custom solutions."
-          />
+          /> */}
         </div>
       </div>
     </section>

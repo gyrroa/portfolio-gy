@@ -14,13 +14,13 @@ export default function TechStack() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <TechCategory
               title="Frontend"
-              items={["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion"]}
+              items={["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js"]}
             />
-            <TechCategory title="Backend" items={["Node.js", "Express", "NestJS", "Python", "Django", "GraphQL"]} />
+            <TechCategory title="Backend" items={["Node.js", "Express", "Python"]} />
             <TechCategory title="Database" items={["MongoDB", "PostgreSQL", "Redis", "Firebase", "Supabase"]} />
-            <TechCategory title="DevOps" items={["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions", "Vercel"]} />
-            <TechCategory title="Tools" items={["Git", "VS Code", "Figma", "Postman", "Jest", "Cypress"]} />
-            <TechCategory title="Mobile" items={["React Native", "Flutter", "Ionic", "Capacitor"]} />
+            {/* <TechCategory title="DevOps" items={["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions", "Vercel"]} /> */}
+            <TechCategory title="Tools" items={["Git", "VS Code", "Figma"]} />
+            {/* <TechCategory title="Mobile" items={["React Native", "Flutter", "Ionic", "Capacitor"]} /> */}
           </div>
         </div>
       </div>

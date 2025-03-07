@@ -35,19 +35,19 @@ export default function Contact() {
               <div className="flex items-center space-x-3 text-gray-300">
                 <Linkedin className="h-5 w-5 text-primary" />
                 <a
-                  href="https://linkedin.com/in/johndoe"
+                  href="https://www.linkedin.com/in/ken-gyrro-acquiat-b94096140/"
                   className="hover:text-primary transition-colors"
                 >
-                  https://www.linkedin.com/in/ken-gyrro-acquiat-b94096140/
+                  gyrro
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Github className="h-5 w-5 text-primary" />
                 <a
-                  href="https://github.com/johndoe"
+                  href="https://github.com/gyrroa"
                   className="hover:text-primary transition-colors"
                 >
-                  github.com/johndoe
+                  https://github.com/gyrroa
                 </a>
               </div>
             </div>

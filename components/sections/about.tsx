@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { User } from "lucide-react"
-import Image from "next/image"
-import SectionHeader from "@/components/ui/section-header"
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
+import Image from "next/image";
+import SectionHeader from "@/components/ui/section-header";
 
 export default function About() {
   return (
@@ -21,15 +21,30 @@ export default function About() {
           >
             <h3 className="text-2xl font-bold text-white">Who am I?</h3>
             <p className="text-gray-300">
-              I'm a passionate Full Stack Developer with over 5 years of experience building web applications. I
-              specialize in creating responsive, user-friendly interfaces with modern technologies.
+              Hello! I'm{" "}
+              <span className="font-bold text-white">Gyrro Acquiat</span>, a
+              passionate software developer crafting innovative digital
+              experiences.
             </p>
-            <p className="text-gray-300">
-              My journey in tech began when I built my first website at 15. Since then, I've been constantly learning
-              and improving my skills to stay at the forefront of web development.
+            <p className="text-gray-300 mt-2">
+              With expertise in{" "}
+              <span className="font-semibold text-white">
+                Java, JavaScript, TypeScript, and Python
+              </span>
+              , I specialize in building immersive web experiences using{" "}
+              <span className="font-semibold text-white">
+                React, Three.js, WebGL
+              </span>
+              , and modern frameworks. I merge technical precision with creative
+              vision to develop solutions that are both functional and visually
+              compelling.
             </p>
-            <p className="text-gray-300">
-              When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes.
+            <p className="text-gray-300 mt-2">
+              Beyond coding, I enjoy playing{" "}
+              <span className="font-semibold text-white">
+                games, instruments, and walking
+              </span>
+              , constantly drawing inspiration from every experience.
             </p>
           </motion.div>
 
@@ -42,8 +57,8 @@ export default function About() {
           >
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary">
               <Image
-                src="/placeholder.svg?height=256&width=256"
-                alt="John Doe"
+                src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/475135071_9031200266971894_7890436499401586655_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF5TMUATOc8gj7gotbugygXFwedVcuOSiQXB51Vy45KJEOIyDg13HgUjd73WZyxNHxE6B2qmKtHKgrCPRZwmMFi&_nc_ohc=8IROfYJMzy0Q7kNvgHSCyxC&_nc_oc=Adgr6ulO1GeeEZu8UKuFEhO15NPP_23bamo4xGtO2rOM7D4VLKosBCVYq5Uyq9ZqVubZOE3ewTBSEka-vD6uVeGc&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=AMMaHfGIf2rdYcC2ww4M-Q-&oh=00_AYFn47jM0OkqUos8EGAkYEloWN9OfynjckMqkGm550gjAA&oe=67D0E1C8"
+                alt="Gyrro Acquiat"
                 width={256}
                 height={256}
                 className="w-full h-full object-cover"
@@ -53,6 +68,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

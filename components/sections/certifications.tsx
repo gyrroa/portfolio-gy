@@ -11,7 +11,7 @@ export default function Certifications() {
         <SectionHeader icon={<Award />} title="Certifications" />
 
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <CertificationCard
+          {/* <CertificationCard
             title="AWS Certified Solutions Architect"
             issuer="Amazon Web Services"
             date="2022"
@@ -31,7 +31,7 @@ export default function Certifications() {
             issuer="freeCodeCamp"
             date="2017"
             link="#"
-          />
+          /> */}
         </div>
       </div>
     </section>

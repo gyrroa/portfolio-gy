@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin } from "lucide-react"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { Github, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -14,7 +14,7 @@ export default function Header() {
           transition={{ duration: 0.5 }}
           className="text-xl font-bold text-white"
         >
-          John Doe
+          Gyrro Acquiat
         </motion.div>
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
@@ -22,19 +22,34 @@ export default function Header() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex space-x-6"
         >
-          <Link href="#about" className="text-white hover:text-primary transition-colors">
+          <Link
+            href="#about"
+            className="text-white hover:text-primary transition-colors"
+          >
             About
           </Link>
-          <Link href="#experience" className="text-white hover:text-primary transition-colors">
+          <Link
+            href="#experience"
+            className="text-white hover:text-primary transition-colors"
+          >
             Experience
           </Link>
-          <Link href="#certifications" className="text-white hover:text-primary transition-colors">
+          <Link
+            href="#certifications"
+            className="text-white hover:text-primary transition-colors"
+          >
             Certifications
           </Link>
-          <Link href="#tech-stack" className="text-white hover:text-primary transition-colors">
+          <Link
+            href="#tech-stack"
+            className="text-white hover:text-primary transition-colors"
+          >
             Tech Stack
           </Link>
-          <Link href="#contact" className="text-white hover:text-primary transition-colors">
+          <Link
+            href="#contact"
+            className="text-white hover:text-primary transition-colors"
+          >
             Contact
           </Link>
         </motion.nav>
@@ -45,7 +60,7 @@ export default function Header() {
           className="flex space-x-4"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/gyrroa"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors"
@@ -54,7 +69,7 @@ export default function Header() {
             <span className="sr-only">GitHub</span>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/ken-gyrro-acquiat-b94096140/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors"
@@ -65,6 +80,5 @@ export default function Header() {
         </motion.div>
       </div>
     </header>
-  )
+  );
 }
-

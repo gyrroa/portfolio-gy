@@ -14,9 +14,9 @@ export default function Hero() {
         className="text-center space-y-6 max-w-3xl"
       >
         <h1 className="text-4xl md:text-6xl font-bold">
-          Hi, I'm <span className="text-primary">Gyrro Acquiat</span>
+          Hi, I'm <span className="text-primary">Gyrro</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300">Software Developer</p>
+        <p className="text-xl md:text-2xl text-gray-300">Software Developer | Innovator | Tech Enthusiast</p>
         <div className="flex justify-center space-x-4">
           <Button asChild>
             <Link href="#contact">Get in Touch</Link>
