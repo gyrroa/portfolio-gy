@@ -1,10 +1,46 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useScroll } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
+  const [activeSection, setActiveSection] = useState("");
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const sectionIds = [
+      "about",
+      "experience",
+      "certifications",
+      "tech-stack",
+      "contact",
+    ];
+
+    const handleScroll = () => {
+      let currentSection = "";
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight * 0.3 &&
+            rect.bottom >= window.innerHeight * 0.3
+          ) {
+            currentSection = id;
+          }
+        }
+      }
+      setActiveSection(currentSection);
+    };
+
+    handleScroll(); // Run on mount
+    const unsubscribe = scrollY.onChange(handleScroll); // Listen for scroll changes
+
+    return () => unsubscribe(); // Cleanup listener
+  }, [scrollY]);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -22,36 +58,25 @@ export default function Header() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex space-x-6"
         >
-          <Link
-            href="#about"
-            className="text-white hover:text-primary transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="#experience"
-            className="text-white hover:text-primary transition-colors"
-          >
-            Experience
-          </Link>
-          <Link
-            href="#certifications"
-            className="text-white hover:text-primary transition-colors"
-          >
-            Certifications
-          </Link>
-          <Link
-            href="#tech-stack"
-            className="text-white hover:text-primary transition-colors"
-          >
-            Tech Stack
-          </Link>
-          <Link
-            href="#contact"
-            className="text-white hover:text-primary transition-colors"
-          >
-            Contact
-          </Link>
+          {[
+            { id: "about", label: "About" },
+            { id: "experience", label: "Experience" },
+            { id: "certifications", label: "Certifications" },
+            { id: "tech-stack", label: "Tech Stack" },
+            { id: "contact", label: "Contact" },
+          ].map(({ id, label }) => (
+            <Link
+              key={id}
+              href={`#${id}`}
+              className={`transition-colors ${
+                activeSection === id
+                  ? "text-primary font-semibold"
+                  : "text-white hover:text-primary"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </motion.nav>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
