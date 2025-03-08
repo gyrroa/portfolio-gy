@@ -58,6 +58,16 @@ export default function TechStack() {
                   url: "https://www.python.org/",
                   logo: "/logos/python.svg",
                 },
+                {
+                  name: "C#",
+                  url: "https://www.w3schools.com/cs/index.php",
+                  logo: "/logos/csharp.svg",
+                },
+                {
+                  name: "SQL",
+                  url: "https://www.w3schools.com/sql/",
+                  logo: "/logos/sql.svg",
+                },
               ]}
             />
             <TechCategory

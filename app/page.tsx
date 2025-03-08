@@ -13,6 +13,7 @@ import Experience from "@/components/sections/experience";
 import Certifications from "@/components/sections/certifications";
 import TechStack from "@/components/sections/tech-stack";
 import Contact from "@/components/sections/contact";
+import Projects from "@/components/sections/projects";
 
 export default function Portfolio() {
   const ref = useRef(null);
@@ -51,6 +52,7 @@ export default function Portfolio() {
         <Hero />
         <About />
         {/* <Experience /> */}
+        <Projects />
         <Certifications />
         <TechStack />
         <Contact />

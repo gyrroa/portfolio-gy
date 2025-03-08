@@ -29,7 +29,7 @@ export default function About() {
             <p className="text-gray-300 mt-2">
               With expertise in{" "}
               <span className="font-semibold text-white">
-                Java, JavaScript, TypeScript, and Python
+                C#, Java, JavaScript, TypeScript, and Python
               </span>
               , I specialize in building immersive web experiences using{" "}
               <span className="font-semibold text-white">
