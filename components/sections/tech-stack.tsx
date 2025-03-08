@@ -18,21 +18,103 @@ export default function TechStack() {
             <TechCategory
               title="Frontend"
               items={[
-                "React",
-                "Next.js",
-                "TypeScript",
-                "Tailwind CSS",
-                "Three.js",
+                {
+                  name: "React",
+                  url: "https://react.dev/",
+                  logo: "/logos/react.svg",
+                },
+                {
+                  name: "Next.js",
+                  url: "https://nextjs.org/",
+                  logo: "/logos/nextjs.svg",
+                },
+                {
+                  name: "TypeScript",
+                  url: "https://www.typescriptlang.org/",
+                  logo: "/logos/typescript.svg",
+                },
+                {
+                  name: "Tailwind CSS",
+                  url: "https://tailwindcss.com/",
+                  logo: "/logos/tailwind.svg",
+                },
+                {
+                  name: "Three.js",
+                  url: "https://threejs.org/",
+                  logo: "/logos/threejs.svg",
+                },
               ]}
             />
             <TechCategory
               title="Backend"
-              items={["Node.js", "Express", "Python"]}
+              items={[
+                {
+                  name: "Node.js",
+                  url: "https://nodejs.org/",
+                  logo: "/logos/nodejs.svg",
+                },
+                {
+                  name: "Python",
+                  url: "https://www.python.org/",
+                  logo: "/logos/python.svg",
+                },
+              ]}
             />
-            <TechCategory title="Database" items={["MySQL", "Firebase"]} />
-            {/* <TechCategory title="DevOps" items={["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions", "Vercel"]} /> */}
-            <TechCategory title="Tools" items={["Git", "VS Code", "Figma"]} />
-            {/* <TechCategory title="Mobile" items={["React Native", "Flutter", "Ionic", "Capacitor"]} /> */}
+            <TechCategory
+              title="Database"
+              items={[
+                {
+                  name: "MySQL",
+                  url: "https://www.mysql.com/",
+                  logo: "/logos/mysql.svg",
+                },
+                {
+                  name: "Firebase",
+                  url: "https://firebase.google.com/",
+                  logo: "/logos/firebase.svg",
+                },
+              ]}
+            />
+            <TechCategory
+              title="Tools"
+              items={[
+                {
+                  name: "Git",
+                  url: "https://git-scm.com/",
+                  logo: "/logos/git.svg",
+                },
+                {
+                  name: "VS Code",
+                  url: "https://code.visualstudio.com/",
+                  logo: "/logos/vscode.svg",
+                },
+                {
+                  name: "Figma",
+                  url: "https://www.figma.com/",
+                  logo: "/logos/figma.svg",
+                },
+                {
+                  name: "Google Colab",
+                  url: "https://colab.research.google.com/",
+                  logo: "/logos/colab.svg",
+                },
+                {
+                  name: "Eclipse",
+                  url: "https://www.eclipse.org/",
+                  logo: "/logos/eclipse.svg",
+                },
+                {
+                  name: "PyCharm",
+                  url: "https://www.jetbrains.com/pycharm/",
+                  logo: "/logos/pycharm.svg",
+                },
+                {
+                  name: "NetBeans",
+                  url: "https://netbeans.apache.org/",
+                  logo: "/logos/netbeans.svg",
+                },
+              ]}
+            />
           </div>
         </div>
       </div>

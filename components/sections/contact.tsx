@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin, Github } from "lucide-react";
+import { Send, Mail, Linkedin, Github, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -35,10 +35,10 @@ export default function Contact() {
               <div className="flex items-center space-x-3 text-gray-300">
                 <Linkedin className="h-5 w-5 text-primary" />
                 <a
-                  href="https://www.linkedin.com/in/ken-gyrro-acquiat-b94096140/"
+                  href="https://www.linkedin.com/in/gyrro/"
                   className="hover:text-primary transition-colors"
                 >
-                  gyrro
+                  linkedin.com/in/gyrro/
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
@@ -47,7 +47,16 @@ export default function Contact() {
                   href="https://github.com/gyrroa"
                   className="hover:text-primary transition-colors"
                 >
-                  https://github.com/gyrroa
+                  github.com/gyrroa
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Facebook className="h-5 w-5 text-primary" />
+                <a
+                  href="https://www.facebook.com/gyrro/"
+                  className="hover:text-primary transition-colors"
+                >
+                  facebook.com/gyrro/
                 </a>
               </div>
             </div>
