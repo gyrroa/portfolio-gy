@@ -25,23 +25,99 @@ export default function Hero() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     canvasRef.current.appendChild(renderer.domElement);
 
+    // Load Saturn texture
     const textureLoader = new THREE.TextureLoader();
-    const neptuneTexture = textureLoader.load(
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5m6I1cNvdxJo1hMYBzgmMzcD1viyiItRiyg&s",
-      () => console.log("Texture loaded successfully"),
+    const saturnTexture = textureLoader.load(
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e0763947-6f42-4d09-944f-c2d6f41c415b/dcaift0-422ad564-f7b0-4291-914f-425b9ac29a35.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UwNzYzOTQ3LTZmNDItNGQwOS05NDRmLWMyZDZmNDFjNDE1YlwvZGNhaWZ0MC00MjJhZDU2NC1mN2IwLTQyOTEtOTE0Zi00MjViOWFjMjlhMzUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.YYTxK1xSwJxGTBIMLHsgFWiwrdd0W6UqmXy7a5CCnnk",
+      () => console.log("Saturn texture loaded successfully"),
       undefined,
       (err) => console.error("Texture loading error:", err)
     );
 
-    const geometry = new THREE.SphereGeometry(2, 64, 64);
+    // Create Saturn sphere
+    const geometry = new THREE.SphereGeometry(1.5, 64, 64);
     const material = new THREE.MeshStandardMaterial({
-      map: neptuneTexture,
+      map: saturnTexture,
       emissive: 0x222222,
       roughness: 0.3,
     });
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+    const saturn = new THREE.Mesh(geometry, material);
+    scene.add(saturn);
 
+    // Create a ring system container
+    const ringSystem = new THREE.Group();
+
+    // Define ring dimensions
+    const innerRadius = 2;
+    const outerRadius = 3.5;
+    const thetaSegments = 64;
+
+    // Create the main flat ring
+    const ringGeometry = new THREE.RingGeometry(
+      innerRadius,
+      outerRadius,
+      thetaSegments
+    );
+
+    // Fix UV mapping for the ring texture
+    const pos = ringGeometry.attributes.position;
+    const v3 = new THREE.Vector3();
+    const ringUvs = [];
+
+    for (let i = 0; i < pos.count; i++) {
+      v3.fromBufferAttribute(pos, i);
+      ringUvs.push((v3.x / outerRadius + 1) / 2, (v3.y / outerRadius + 1) / 2);
+    }
+
+    ringGeometry.setAttribute(
+      "uv",
+      new THREE.Float32BufferAttribute(ringUvs, 2)
+    );
+
+    // Create ring particles that are properly aligned with the ring plane
+    const particleCount = 100000;
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount; i++) {
+      // Random angle
+      const angle = Math.random() * Math.PI * 2;
+
+      // Random radius between inner and outer with slight weighting
+      // This creates more particles in the denser areas of the rings
+      const radius =
+        innerRadius +
+        Math.pow(Math.random(), 1.2) * (outerRadius - innerRadius);
+
+      // Position in ring plane (x-y plane before rotation)
+      particlePositions[i * 3] = Math.cos(angle) * radius; // x
+      particlePositions[i * 3 + 1] = Math.sin(angle) * radius; // y
+
+      // Small z variation for thickness (much smaller than before)
+      particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 0.03;
+    }
+
+    particlesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(particlePositions, 3)
+    );
+
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0x9F988A,
+      size: 0.01,
+      transparent: true,
+      opacity: 0.3,
+      sizeAttenuation: true,
+    });
+
+    const particles = new THREE.Points(particlesGeometry, particleMaterial);
+    ringSystem.add(particles);
+
+    // Apply the tilt to the entire ring system
+    ringSystem.rotation.x = Math.PI / -2.2;
+    saturn.add(ringSystem);
+
+    // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(ambientLight);
 
@@ -53,25 +129,28 @@ export default function Hero() {
     directionalLight.position.set(-5, 5, 5);
     scene.add(directionalLight);
 
-    camera.position.z = 5;
+    // Position camera
+    camera.position.z = 6;
 
+    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      sphere.rotation.y += 0.0025;
-      sphere.rotation.x += 0.0025;
+      saturn.rotation.y += 0.0025;
       renderer.render(scene, camera);
     };
     animate();
 
-    const handleMouseMove = (event) => {
+    // Mouse interaction
+    const handleMouseMove = (event: MouseEvent) => {
       const xFactor = (event.clientX / window.innerWidth - 0.5) * 0.2;
       const yFactor = -(event.clientY / window.innerHeight - 0.5) * 0.2;
-      sphere.position.x = xFactor;
-      sphere.position.y = yFactor;
+      saturn.position.x = xFactor;
+      saturn.position.y = yFactor;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Cleanup
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       if (canvasRef.current && renderer.domElement) {
@@ -103,7 +182,7 @@ export default function Hero() {
             transition={{
               duration: 0.8,
               ease: "easeInOut",
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               repeatType: "reverse",
             }}
           >
