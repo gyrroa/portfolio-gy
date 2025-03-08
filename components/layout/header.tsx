@@ -13,6 +13,7 @@ export default function Header() {
     const sectionIds = [
       "about",
       "experience",
+      "projects",
       "certifications",
       "tech-stack",
       "contact",
