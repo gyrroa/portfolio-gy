@@ -15,7 +15,7 @@ export default function TechCategory({ title, items }: TechCategoryProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-gray-800/50 p-6 rounded-lg border border-gray-700"
+      className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-primary transition-colors"
     >
       <h3 className="text-lg font-bold text-white mb-4">{title}</h3>
       <div className="flex flex-wrap gap-3">
