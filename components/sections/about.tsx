@@ -57,7 +57,7 @@ export default function About() {
           >
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary">
               <Image
-                src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/475135071_9031200266971894_7890436499401586655_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF5TMUATOc8gj7gotbugygXFwedVcuOSiQXB51Vy45KJEOIyDg13HgUjd73WZyxNHxE6B2qmKtHKgrCPRZwmMFi&_nc_ohc=8IROfYJMzy0Q7kNvgHSCyxC&_nc_oc=Adgr6ulO1GeeEZu8UKuFEhO15NPP_23bamo4xGtO2rOM7D4VLKosBCVYq5Uyq9ZqVubZOE3ewTBSEka-vD6uVeGc&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=AMMaHfGIf2rdYcC2ww4M-Q-&oh=00_AYFn47jM0OkqUos8EGAkYEloWN9OfynjckMqkGm550gjAA&oe=67D0E1C8"
+                src="./profile.jpg"
                 alt="Gyrro Acquiat"
                 width={256}
                 height={256}

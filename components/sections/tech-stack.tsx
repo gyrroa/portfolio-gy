@@ -99,6 +99,11 @@ export default function TechStack() {
                   logo: "/logos/vscode.svg",
                 },
                 {
+                  name: "Vercel",
+                  url: "https://vercel.com/",
+                  logo: "/logos/vercel.png",
+                },
+                {
                   name: "Figma",
                   url: "https://www.figma.com/",
                   logo: "/logos/figma.svg",
