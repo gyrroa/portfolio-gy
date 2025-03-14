@@ -58,19 +58,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
         </CardContent> */}
-        {/* <CardFooter className="flex justify-between gap-4">
-          <Button variant="outline" asChild className="flex-1">
-            <a
-              href={project.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
-            >
-              <ExternalLink className="h-4 w-4" />
-              Live Demo
-            </a>
-          </Button>
-          <Button variant="outline" asChild className="flex-1">
+        <CardFooter className="flex justify-between gap-4">
+          {project.title === "Technology & Internet Addiction Awareness" && (
+            <Button variant="outline" asChild className="flex-1">
+              <a
+                href={project.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <ExternalLink className="h-4 w-4" />
+                View
+              </a>
+            </Button>
+          )}
+          {/* <Button variant="outline" asChild className="flex-1">
             <a
               href={project.codeLink}
               target="_blank"
@@ -80,8 +82,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <Github className="h-4 w-4" />
               Source Code
             </a>
-          </Button>
-        </CardFooter> */}
+          </Button> */}
+        </CardFooter>
       </Card>
     </motion.div>
   );

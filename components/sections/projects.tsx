@@ -8,6 +8,15 @@ export default function Projects() {
   // Sample project data
   const projects = [
     {
+      title: "Technology & Internet Addiction Awareness",
+      description:
+        "Technology addiction is a dependency caused by emotional, psychological, social, and biological factors, leading to an inability to control technology use. It affects people of all ages exposed to technology and the internet.",
+      image: "projects/tiaa.png",
+      technologies: ["React", "Firebase", "Material UI", "Chart.js", "Auth0"],
+      demoLink: "https://v0-test-conversation.vercel.app/",
+      //codeLink: "https://github.com/johndoe/task-dashboard",
+    },
+    {
       title: "Security Guards Payroll & Records System",
       description:
         "This system simplifies the management of security guards' records and payroll for the Federal Security Agency. It enables authorized personnel to efficiently handle guard information, assignments, attendance, and payroll. The system supports quick searches by name or ID and allows for seamless CRUD operations.",
@@ -41,7 +50,7 @@ export default function Projects() {
       image: "projects/federaland2.png",
       technologies: ["React", "Firebase", "Material UI", "Chart.js", "Auth0"],
       demoLink: "https://example.com",
-      codeLink: "https://github.com/johndoe/task-dashboard",
+      //codeLink: "https://github.com/johndoe/task-dashboard",
     },
     {
       title: "AcademiX – an all-in-one student platform (Prototype)",
@@ -50,16 +59,7 @@ export default function Projects() {
       image: "projects/academix.png",
       technologies: ["React", "Firebase", "Material UI", "Chart.js", "Auth0"],
       demoLink: "https://example.com",
-      codeLink: "https://github.com/johndoe/task-dashboard",
-    },
-    {
-      title: "Technology & Internet Addiction Awareness",
-      description:
-        "Technology addiction is a dependency caused by emotional, psychological, social, and biological factors, leading to an inability to control technology use. It affects people of all ages exposed to technology and the internet.",
-      image: "projects/tiaa.png",
-      technologies: ["React", "Firebase", "Material UI", "Chart.js", "Auth0"],
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/johndoe/task-dashboard",
+      //codeLink: "https://github.com/johndoe/task-dashboard",
     },
   ];
 
